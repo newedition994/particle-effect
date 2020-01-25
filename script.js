@@ -1,9 +1,12 @@
-let p;
+const particles = [];
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
 
-  p = new Particle();
+  const particlesLength = Math.min(Math.floor(window.innerWidth / 10), 100);
+  for (let i = 0; i < particlesLength; i++) {
+    particles.push(new Particle());
+  }
 }
 
 function draw() {
@@ -25,6 +28,7 @@ class Particle {
   // update movement
   update() {
     this.pos.add(this.vel);
+    this.edges();
   }
 
   // draw particle
