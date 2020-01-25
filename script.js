@@ -1,8 +1,14 @@
+let p;
+
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
+
+  p = new Particle();
 }
 
-function draw() {}
+function draw() {
+  p.draw();
+}
 
 class Particle {
   constructor() {
