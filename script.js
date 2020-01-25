@@ -11,8 +11,10 @@ function setup() {
 
 function draw() {
   background(55, 100, 144);
-  p.update();
-  p.draw();
+  particles.forEach((particle, idx) => {
+    particle.update();
+    particle.draw();
+  });
 }
 
 class Particle {
