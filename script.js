@@ -7,6 +7,8 @@ function setup() {
 }
 
 function draw() {
+  background(55, 100, 144);
+  p.update();
   p.draw();
 }
 
@@ -14,8 +16,14 @@ class Particle {
   constructor() {
     // Position
     this.pos = createVector(random(width), random(height));
+    // Velocity
+    this.vel = createVector(random(-2, 2), random(-2, 2));
     // Size
     this.size = 10;
+  }
+
+  update() {
+    this.pos.add(this.vel);
   }
 
   draw() {
